@@ -1,0 +1,49 @@
+function solution(D){
+    
+    var value = Object.keys(D); //input keys
+    
+    var len=Object.keys(value).length; //length of input dictionary
+    
+    var output={'Mon':0, 'Tue':0, 'Wed':0, 'Thu':0, 'Fri':0, 'Sat': 0, 'Sun':0};
+    for (let i = 0; i < len; i++){
+        var dt = new Date(value[i])
+         if(dt.getDay()==0){
+         	output['Sun']+=D[value[i]]
+         }
+         else if(dt.getDay() == 1){
+        //  	document.write("Monday")
+            output['Mon']+=D[value[i]]
+         }
+         else if(dt.getDay() == 2){
+        //  	document.write("Tuesday")
+            output['Tue']+=D[value[i]]
+         }
+         else if(dt.getDay() == 3){
+        //  	document.write("Wednesday")
+            output['Wed']+=D[value[i]]
+         }
+         else if(dt.getDay() == 4){
+        //  	document.write("Thursday")
+            output['Thu']+=D[value[i]]
+         }
+         else if(dt.getDay() == 5){
+        //  	document.write("Friday")
+            output['Fri']+=D[value[i]]
+         }
+         else if(dt.getDay() == 6){
+        //  	document.write("Saturday")
+            output['Sat']+=D[value[i]]
+         }
+    }
+    
+    // for(let i = 0; i < len; i++){
+    
+        
+    // }
+    
+    console.log(D)
+    console.log(output)
+}    
+    
+    var l={"2020-01-01": 4,"2020-01-02": 4,"2020-01-03": 6,"2020-01-04": 8,"2020-01-05": 2,"2020-01-06":-6,"2020-01-07": 2,"2020-01-08": -2};
+    solution(l);
